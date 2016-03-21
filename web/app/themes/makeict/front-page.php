@@ -13,24 +13,6 @@
     </div>
   </div>
 
-  <div class="container">
-    <!-- Example row of columns -->
-    <div class="row">
-      <div class="col-md-4">
-        <h2><?php echo $custom_fields['Column 1 Header'][0]; ?></h2>
-        <?php echo $custom_fields['Column 1 Body'][0]; ?>
-      </div>
-      <div class="col-md-4">
-        <h2><?php echo $custom_fields['Column 2 Header'][0]; ?></h2>
-        <?php echo $custom_fields['Column 2 Body'][0]; ?>
-       </div>
-      <div class="col-md-4">
-        <h2><?php echo $custom_fields['Column 3 Header'][0]; ?></h2>
-        <?php echo $custom_fields['Column 3 Body'][0]; ?>
-      </div>
-    </div>
-  </div>
-
 <?php endwhile; ?>
 <?php endif; ?>
 

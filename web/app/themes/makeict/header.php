@@ -7,6 +7,8 @@
     <meta name="author" content="">
     <link rel="icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico">
 
+    <script src="<?php echo get_template_directory_uri(); ?>/assets/vendor/jquery-1.11.1.min.js"></script>
+
     <?php if (is_home()) { ?>
       <title><?php echo get_bloginfo('name'); ?></title>
     <?php } else { ?>
@@ -41,28 +43,63 @@
           <a class="navbar-brand" href="/"><?php echo bloginfo('name'); ?></a>
         </div>
         <div id="navbar" class="navbar-collapse collapse pull-right">
-          <ul class="nav navbar-nav">
-            <li><a href="/events" title="MakeICT Events">Events</a></li>
-            <li><a href="/projects" title="MakeICT Projects">Projects</a></li>
-            <li><a href="/makerspace" title="MakeICT MakerSpace">MakerSpace</a></li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Get Involved <span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><a href="/membership" title="Membership">Membership</a></li>
-                <li><a href="/teach-a-workshop" title="Teach a Workshop">Teach a Workshop</a></li>
-                <li><a href="/donations" title="Donations">Donations</a></li>
-              </ul>
-            </li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Community <span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><a href="#" title="MakeICT Forum">Forum</a></li>
-                <li><a href="#" title="MakeICT Wiki">Wiki</a></li>
-                <li><a href="/blog" title="MakeICT Blog">Blog</a></li>
-              </ul>
-            </li>
-            <li><a href="/contact-us" title="Contact MakeICT">Contact Us</a></li>
-          </ul>
+
+
+
+<ul class="nav navbar-nav">
+	<li class="dropdown">
+		<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Membership<span class="caret"></span></a>
+		<ul class="dropdown-menu">
+			<li><a href="/join">How to join</a></li>
+			<li><a href="/membership-benefits">Benefits</a></li>
+			<li><a href="/rules-and-policies">Rules and policies</a></li>
+			<li><a href="/membership">Manage my membership</a></li>
+			<li><a href="/reservations">Reserve space</a></li>
+			<li><a href="/wiki">The Wiki</a></li>
+		</ul>
+	</li>
+	<li class="dropdown">
+		<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Events<span class="caret"></span></a>
+		<ul class="dropdown-menu">
+			<li><a href="/maker-mondays">Maker Mondays</a></li>
+			<li><a href="/orientation">New member orientation</a></li>
+			<li><a href="/calendar">Calendar and event list</a></li>
+			<li><a href="/education">Suggest an event or workshop</a></li>
+		</ul>
+	</li>
+	<li class="dropdown">
+		<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Facilities &amp; Programs<span class="caret"></span></a>
+		<ul class="dropdown-menu">
+			<li><a href="/makerspace-facilities">Makerspace</a></li>
+			<li><a href="/devICT">devICT</a></li>
+			<li><a href="/education">Education</a></li>
+			<li><a href="/outreach">Outreach</a></li>
+		</ul>
+	</li>
+	<li class="dropdown">
+		<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Contribute<span class="caret"></span></a>
+		<ul class="dropdown-menu">
+			<li><a href="/donate">Donate</a></li>
+			<li><a href="/education">Teach</a></li>
+			<li><a href="/volunteer">Volunteer</a></li>
+		</ul>
+	</li>
+	<li class="dropdown">
+		<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Community<span class="caret"></span></a>
+		<ul class="dropdown-menu">
+			<li><a href="/forum">Forum</a></li>
+			<li><a href="/featured-makers">Featured makers</a></li>
+			<li><a href="/team-projects">Team Projects</a></li>
+			<li><a href="/leadership">Leadership</a></li>
+			<li><a href="/newsletter">Newsletter</a></li>
+		</ul>
+	</li>
+</ul>
+
+
+         
+
+
         </div><!--/.navbar-collapse -->
       </div>
     </nav>

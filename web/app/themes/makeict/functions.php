@@ -1,5 +1,5 @@
 <?php
-
+/*
 add_action( 'init', 'create_project_posttype' );
 
 function create_project_posttype() {
@@ -16,3 +16,4 @@ function create_project_posttype() {
     )
   );
 }
+*/
