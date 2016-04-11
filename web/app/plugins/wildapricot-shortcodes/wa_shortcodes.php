@@ -87,6 +87,7 @@ function wildapricot_eventList($atts){
             <table class="eventList">';
         foreach($events as $event){
           try{
+            if($event['AccessLevel'] != 'Public') continue;
             $row++;
             
             $eventData = $waApiClient->makeRequest($event['Url']);
