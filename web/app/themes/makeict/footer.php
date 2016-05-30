@@ -1,13 +1,10 @@
     <div class="container footer">
       <hr>
       <footer>
-        <div class="row">
-          <div class="col-xs-6">
-            <p>
-              MakeICT is a 501(c)(3) charitable nonprofit that operates the makerspace at <a href="https://www.google.com/maps/place/1500+E+Douglas+Ave,+Wichita,+KS+67214/">1500 E Douglas Ave</a> in Wichita, Kansas.
-            </p>
-          </div>
-        </div>
+		<p>
+		  MakeICT is a 501(c)(3) charitable nonprofit that operates the makerspace at<br/>
+		  <a href="https://www.google.com/maps/place/1500+E+Douglas+Ave,+Wichita,+KS+67214/" target="_blank">1500 E Douglas Ave in Wichita, Kansas</a>
+		</p>
       </footer>
     </div> <!-- /container -->
 
