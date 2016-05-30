@@ -1,5 +1,5 @@
 set :application, 'makeict.org'
-set :repo_url, 'git@github.com:devict/makeict.org.git'
+set :repo_url, 'git@github.com:makeict/makeict.org.git'
 
 # Branch options
 # Prompts for the branch name (defaults to current branch)
@@ -9,7 +9,7 @@ set :repo_url, 'git@github.com:devict/makeict.org.git'
 # This could be overridden in a stage config file
 set :branch, :master
 
-set :deploy_to, -> { "/var/www/#{fetch(:application)}" }
+set :deploy_to, -> { "/home/makeict/sites/#{fetch(:application)}" }
 
 # Use :debug for more verbose output when troubleshooting
 set :log_level, :info
