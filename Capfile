@@ -5,7 +5,7 @@ require 'capistrano/setup'
 require 'capistrano/deploy'
 
 # Load tasks from gems
-require 'capistrano/composer'
+#require 'capistrano/composer'
 
 # Wrapper for wp-cli, used for DB and uploads syncing
 require 'capistrano/wpcli'

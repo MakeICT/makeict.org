@@ -10,18 +10,26 @@ setlocale(LC_MONETARY, 'en_US.utf8');
 function funding_project_info($atts){
 	$atts = shortcode_atts(array(
 		'children_of' => null,
-		'project' => null
+		'project' => null,
+		'show_headings' => 'true',
+		'heading_level' => 3
 	), $atts);
 	$projects = get_option('funding_projects_list');
-	if(empty($projects)) return 'Project not found :(';
+	if(empty($projects)) return 'Funding projects could not be loaded :(';
 	$output = '';
+	
+	$noParams = empty($atts['project']) && $atts['children_of'] === null;
 	foreach($projects as $project){
-		$noParams = empty($atts['project']) && empty($atts['children_of']);
-		if($noParams || $project['Name'] == $atts['project'] || $project['Parent project'] == $atts['children_of']){
-			$output .= '
-				<h3>' . $project['Name'] . ' : ' . money_format('%.2n', $project['total']) . '</h3>
-				<h4>' . $project['Description'] . '</h4>';
+		if(($noParams) || ($project['Name'] == $atts['project']) || ($atts['children_of'] !== null && $project['Parent project'] == $atts['children_of'])){
 			if(count($project['items']) > 0){
+				if($atts['show_headings'] == 'true'){
+					$output .= '
+						<h'. ($atts['heading_level']) . '>' .
+						$project['Name'] . ': ' .
+						money_format('%.2n', $project['totalRaised']) . ' of ' . money_format('%.2n', $project['totalCost']) . '
+						</h'. ($atts['heading_level']) .'>
+						<h'. ($atts['heading_level']+1) .'>' . $project['Description'] . '</h'. ($atts['heading_level']+1) .'>';
+				}
 				$output .= '
 					<table class="bom">
 						<tr>
@@ -29,27 +37,34 @@ function funding_project_info($atts){
 							<th>Price</th>
 							<th>Qty</th>
 							<th>Cost</th>
+							<th>Raised</th>
 							<th>Note</th>
 						</tr>';
 				foreach($project['items'] as $item){
-					$item['Price'] = 
 					$output .= '
 						<tr>
 							<td>' . $item['Name'] . '</td>
-							<td>' . money_format('%.2n', 0+$item['Price']) . '</td>
+							<td>' . @money_format('%.2n', $item['Price']) . '</td>
 							<td>' . $item['Quantity'] . '</td>
-							<td>' . money_format('%.2n', $item['Cost']) . '</td>
+							<td>' . @money_format('%.2n', $item['Cost']) . '</td>
+							<td>' . @money_format('%.2n', $item['Raised']) . '</td>
 							<td>' . $item['Note'] . '</td>
 						</tr>';
 				}
 				$output .= '
 						<tr>
 							<th colspan="3">Total</th>
-							<th colspan="2">' . money_format('%.2n', 0+$project['total']) . '</th>
+							<th>' . money_format('%.2n', 0+$project['totalCost']) . '</th>
+							<th>' . money_format('%.2n', 0+$project['totalRaised']) . '</th>
+							<th>&nbsp;</th>
 						</tr>';
-				$output .= '</table>';
+				$output .= '
+					</table><br/>';
 			}
 		}
+	}
+	if(empty($output)){
+		$output = 'This funding project could not be found :(';
 	}
 
 	return $output;
@@ -58,7 +73,7 @@ function funding_project_info($atts){
 function funding_projects_settings_page(){
   ?>
     <div class="wrap">
-      <h2>MakeICT Project Budgets</h2>
+      <h2>Project Budgets</h2>
    <?php
 	$apiURL = get_option('funding_projects_api_url');
 	if(!empty(get_option('funding_projects_reload'))){
@@ -73,9 +88,11 @@ function funding_projects_settings_page(){
 			
 			echo 'Processing projects...<br/>';
 			foreach($projects as $name=>$project){
-				$project['total'] = 0;
+				$project['totalCost'] = 0;
+				$project['totalRaised'] = 0;
 				foreach($project['items'] as $item){
-					$project['total'] += ($item['Price'] * $item['Quantity']);
+					$project['totalCost'] += ($item['Price'] * $item['Quantity']);
+					$project['totalRaised'] += $item['Raised'];
 				}
 				$projects[$name] = $project;
 			}
@@ -115,8 +132,8 @@ function register_funding_projects_settings() {
 
 function funding_projects_create_menu(){
   add_menu_page(
-    'MakeICT Project Budgets',
-    'MakeICT Project Budgets',
+    'Project Budgets',
+    'Project Budgets',
     'administrator',
     __FILE__,
     'funding_projects_settings_page'

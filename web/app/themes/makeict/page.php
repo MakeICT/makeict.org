@@ -1,11 +1,12 @@
 <?php get_header(); ?>
 
 <!-- Main jumbotron for a primary marketing message or call to action -->
-<div class="jumbotron">
+<div class="jumbotron jumbotron-main">
 	<div class="container">
 		<h2><?php the_title(); ?></h2>
 	</div>
 </div>
+<div class="jumbotron-spacer"></div>
 
 <div class="container">
   <!-- Example row of columns -->

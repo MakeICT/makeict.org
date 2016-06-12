@@ -15,5 +15,6 @@
     <script src="<?php echo get_template_directory_uri(); ?>/assets/vendor/bootstrap/js/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="<?php echo get_template_directory_uri(); ?>/assets/vendor/ie10-viewport-bug-workaround.js"></script>
+    <?php wp_footer(); ?>
   </body>
 </html>
