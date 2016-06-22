@@ -46,7 +46,8 @@
 			$args = array(
 				'theme_location' => 'header-menu',
 				'menu_class' => 'nav navbar-nav',
-				'container_class' => 'navbar-collapse collapse pull-right',
+				'container_class' => 'navbar-collapse collapse',
+				'container_id' => 'navbar',
 				'walker' => new MakeICT_menu_walker()
 			);
 			wp_nav_menu($args); 

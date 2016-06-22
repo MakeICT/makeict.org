@@ -91,6 +91,21 @@ body {
 	.jumbotron-spacer {
 		height: 3.5em;
 	}
+	
+	#navbar {
+		margin-top: -6em;
+		width: 100%;
+		position: fixed;
+		top: 180x;
+	}
+	
+	.navbar-nav > * {
+		font-weight: bold;
+	}
+	.navbar-nav * {
+		background-color: #fff;
+		text-align: center;
+	}
 }
 
 .footer {

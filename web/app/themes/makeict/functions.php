@@ -6,10 +6,10 @@ function register_my_menu() {
 add_action( 'init', 'register_my_menu' );
 
 class MakeICT_menu_walker extends Walker_Nav_Menu {
-    function start_lvl( &$output, $depth = 0, $args = array() ) {
+    function start_lvl(&$output, $depth = 0, $args = array()){
     }
     
-    function end_lvl( &$output, $depth = 0, $args = array() ) {
+    function end_lvl(&$output, $depth = 0, $args = array()){
 	}
  
     function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
