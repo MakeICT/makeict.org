@@ -22,14 +22,13 @@ body {
 	z-index: 3;
 }
 
-
 .navbar-brand {
 	background: url(assets/images/logo-primary.png) no-repeat;
 	width: 155px;
 	height: 155px;
 	text-indent: -9999px;
 	background-size: contain;
-	margin-top: -20px !important;
+	margin-top: -20px;
 	margin-left: -24px !important;
 }
 
@@ -49,15 +48,22 @@ body {
 	padding: .5em;
 }
 
+.jumbotron > .container > *{
+	font-weight: bold;
+}
+
 .jumbotron-main {
 	position: fixed;
 	width: 100%;
-	margin-top: -2em;
+	padding-top: 4em;
+	padding-bottom: 0em;
+	margin-top: -3em;
 	z-index: 2;
+	font-weight: bold;
 }
 
 .jumbotron-spacer {
-	height: 5em;
+	height: 6em;
 	background: #fff;
 }
 
@@ -67,15 +73,23 @@ body {
 
 @media (max-width:767px) {
 	.navbar-brand {
-		background: url(assets/images/logo-secondary.png) no-repeat;
-		width: 140px;
-		height: 75px;
+		width: 90px;
 		background-size: contain;
 		margin-left: 25px !important;
+		margin-top: 0;
 	}
-	.jumbotron-main>.container {
-		padding-left: 0;
-		text-align: center;
+	
+	.jumbotron-main {
+		padding-top: 0;
+		padding-bottom: 1em;
+	}
+	
+	.jumbotron-main > .container {
+		padding-left: 120px;
+	}
+
+	.jumbotron-spacer {
+		height: 3.5em;
 	}
 }
 
