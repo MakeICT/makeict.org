@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico">
-
+    <link rel="icon" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicon.ico">
+	<link rel="icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicon-32x32.png" sizes="32x32" />
+	<link rel="icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicon-16x16.png" sizes="16x16" />
     <script src="<?php echo get_template_directory_uri(); ?>/assets/vendor/jquery-1.11.1.min.js"></script>
 
     <?php if (is_home()) { ?>

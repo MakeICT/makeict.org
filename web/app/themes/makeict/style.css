@@ -30,6 +30,8 @@ body {
 	background-size: contain;
 	margin-top: -20px;
 	margin-left: -24px !important;
+	background-color: #fff;
+	border-radius: 10%;
 }
 
 .navbar-backing {
@@ -63,7 +65,7 @@ body {
 }
 
 .jumbotron-spacer {
-	height: 6em;
+	height: 6.5em;
 	background: #fff;
 }
 
@@ -74,6 +76,7 @@ body {
 @media (max-width:767px) {
 	.navbar-brand {
 		width: 90px;
+		height: 90px;
 		background-size: contain;
 		margin-left: 25px !important;
 		margin-top: 0;
