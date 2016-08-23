@@ -31,34 +31,44 @@ function funding_project_info($atts){
 						<h'. ($atts['heading_level']+1) .'>' . $project['Description'] . '</h'. ($atts['heading_level']+1) .'>';
 				}
 				$output .= '
-					<table class="bom">
-						<tr>
-							<th>Item</th>
-							<th>Price</th>
-							<th>Qty</th>
-							<th>Cost</th>
-							<th>Raised</th>
-							<th>Note</th>
-						</tr>';
+					<table class="table table-striped table-hover table-bordered">
+						<thead>
+							<tr>
+								<th>Item</th>
+								<th class="hidden-xs">Price</th>
+								<th class="hidden-xs">Qty</th>
+								<th>Cost</th>
+								<th>Raised</th>
+								<th class="hidden-xs">Note</th>
+							</tr>
+						</thead>
+						<tbody>';
 				foreach($project['items'] as $item){
 					$output .= '
-						<tr>
-							<td>' . $item['Name'] . '</td>
-							<td>' . @money_format('%.2n', $item['Price']) . '</td>
-							<td>' . $item['Quantity'] . '</td>
-							<td>' . @money_format('%.2n', $item['Cost']) . '</td>
-							<td>' . @money_format('%.2n', $item['Raised']) . '</td>
-							<td>' . $item['Note'] . '</td>
-						</tr>';
+							<tr>
+								<td><span class="visible-xs-inline">' . $item['Quantity'] . 'x</span> ' . $item['Name'] . '</td>
+								<td class="hidden-xs">' . @money_format('%.2n', $item['Price']) . '</td>
+								<td class="hidden-xs">' . $item['Quantity'] . '</td>
+								<td>' . @money_format('%.2n', $item['Cost']) . '</td>
+								<td>' . @money_format('%.2n', $item['Raised']) . '</td>
+								<td class="hidden-xs">' . $item['Note'] . '</td>
+							</tr>';
 				}
 				$output .= '
-						<tr>
-							<th colspan="3">Total</th>
-							<th>' . money_format('%.2n', 0+$project['totalCost']) . '</th>
-							<th>' . money_format('%.2n', 0+$project['totalRaised']) . '</th>
-							<th>&nbsp;</th>
-						</tr>';
-				$output .= '
+						</tbody>
+						<tfoot>
+							<tr class="hidden-xs">
+								<th colspan="3">Total</th>
+								<th>' . money_format('%.2n', 0+$project['totalCost']) . '</th>
+								<th>' . money_format('%.2n', 0+$project['totalRaised']) . '</th>
+								<th>&nbsp;</th>
+							</tr>
+							<tr class="visible-xs">
+								<th>Total</th>
+								<th>' . money_format('%.2n', 0+$project['totalCost']) . '</th>
+								<th>' . money_format('%.2n', 0+$project['totalRaised']) . '</th>
+							</tr>
+						</tfoot>
 					</table><br/>';
 			}
 		}
