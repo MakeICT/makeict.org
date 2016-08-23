@@ -25,7 +25,7 @@ body {
 .navbar-brand {
 	background: url(assets/images/logo-primary.png) no-repeat;
 	width: 155px;
-	height: 155px;
+	height: 145px;
 	text-indent: -9999px;
 	background-size: contain;
 	margin-top: -20px;
