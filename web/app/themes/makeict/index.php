@@ -2,7 +2,7 @@
 
 <div class="jumbotron jumbotron-main">
 	<div class="container">
-		<h2><?php single_cat_title(); ?></h2>
+		<h1><?php single_cat_title(); ?></h1>
 	</div>
 </div>
 <div class="jumbotron-spacer"></div>

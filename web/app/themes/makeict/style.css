@@ -64,6 +64,11 @@ body {
 	font-weight: bold;
 }
 
+.jumbotron-main h1 {
+	font-size: 48px;
+	margin-top: 0;
+}
+
 .jumbotron-spacer {
 	height: 6.5em;
 	background: #fff;
@@ -114,6 +119,10 @@ body {
 .footer {
 	padding-bottom: 40px;
 	text-align: center;
+}
+
+.carousel {
+	margin-bottom: 1em;
 }
 
 .carousel-inner>.item>img{
