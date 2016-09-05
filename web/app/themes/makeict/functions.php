@@ -18,7 +18,7 @@ class MakeICT_menu_walker extends Walker_Nav_Menu {
 			$output .= '	<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">' . $item->title . '<span class="caret"></span></a>'. "\n";
 			$output .= "	<ul class=\"dropdown-menu\">\n";
 		}else{
-			$output .= "		<li><a href=\"/" . $item->url . "\">" . $item->title . "</a></li>\n";
+			$output .= "		<li><a href=\"" . $item->url . "\">" . $item->title . "</a></li>\n";
 		}
     }
     
