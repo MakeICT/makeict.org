@@ -55,9 +55,10 @@ function bootstrap_carousel($atts, $content){
 			<a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
 				<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
 				<span class="sr-only">Next</span>
-			</a>
-		</div><br/>';
+			</a>';
 	}
+	$output .= '
+		</div>';
 	return $output;
 }
 
