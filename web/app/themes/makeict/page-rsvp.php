@@ -27,8 +27,9 @@
         <?php echo the_content(); ?>
         <?php 
           if(!empty($_GET['event'])){
+			  $eventID = intval($_GET['event']);
         ?>
-	    <iframe width='750px' height='600px' frameborder='no' src='http://makeict.wildapricot.org/widget/event-<?php echo $_GET['event']; ?>'  onload='tryToEnableWACookies("http://makeict.wildapricot.org");' ></iframe><script  type="text/javascript" language="javascript" src="http://makeict.wildapricot.org/Common/EnableCookies.js" ></script>
+	    <iframe width="750" height="600" style="width:100%" frameborder="no" src="http://makeict.wildapricot.org/widget/event-<?php echo $eventID; ?>"  onload="tryToEnableWACookies('http://makeict.wildapricot.org');"></iframe><script type="text/javascript" language="javascript" src="http://makeict.wildapricot.org/Common/EnableCookies.js"></script>
         <?php
           }else{
             echo "No event specified :(";
