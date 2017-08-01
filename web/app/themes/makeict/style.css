@@ -196,3 +196,8 @@ table.bom tr>*:nth-child(6){
 table.bom tr:last-child>* {
 	text-align: right;
 }
+
+.blog-date {
+	border-bottom: 1px dashed #ccc;
+	margin-bottom: 1em;
+}

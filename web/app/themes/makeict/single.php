@@ -16,6 +16,12 @@
       <?php if (have_posts()) : ?>
       <?php while (have_posts()) : the_post(); ?>
 
+        <div class="blog-date">
+          Posted: 
+          <span class="date"><?php the_date(get_option('date_format')); ?></span>
+	  <span class="time"><?php the_time(get_option('time_format')); ?></span>
+	</div>
+
         <?php echo the_content(); ?>
 
       <?php endwhile; ?>
