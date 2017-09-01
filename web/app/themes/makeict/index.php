@@ -15,7 +15,9 @@
       <!-- THE LOOOOOOOOOOOP -->
       <?php if (have_posts()) : ?>
       <?php while (have_posts()) : the_post(); ?>
-        <h2><?php the_title(); ?></h2>
+        <h2><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+            <?php the_title(); ?></a>
+        </h2>
         <div class="blog-date">
           <span class="date"><?php the_date(get_option('date_format')); ?></span>
 	  <span class="time"><?php the_time(get_option('time_format')); ?></span>
